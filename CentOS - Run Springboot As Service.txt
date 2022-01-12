@@ -1,0 +1,101 @@
+
+<packaging>jar</packaging>
+
+<build>
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <executable>true</executable>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+
+
+
+
+- sudo apt update
+
+sudo mkdir /var/odfms
+sudo mkdir /var/odfms/logs
+# sudo touch /var/odfms/officems.conf
+
+sudo useradd bigdata_user
+
+sudo touch /etc/systemd/system/odfms.service
+sudo nano /etc/systemd/system/odfms.service
+--------------------------------------------------------
+[Unit]
+Description= GOPMS Application
+After=syslog.target
+
+[Service]
+User=bigdata_user
+ExecStart=/usr/bin/java -Xmx256m -jar /var/odfms/odfms.jar
+SuccessExitStatus=143
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+--------------------------------------------------------
+
+# sudo mkdir /upload
+# sudo mkdir /upload/reception
+# sudo mkdir /upload/reception/visitors
+# sudo chown -R bigdata_user:bigdata_user /upload
+
+
+sudo rm -rf /var/odfms/odfms.jar
+sudo mv ~/odfms.jar /var/odfms/
+
+
+sudo chown bigdata_user:bigdata_user /var/odfms/odfms.jar
+sudo chmod 500 /var/odfms/odfms.jar
+# sudo chmod +x /var/odfms/odfms.jar
+
+sudo systemctl enable gopms.service
+sudo systemctl daemon-reload
+
+sudo service gopms start
+
+## Logs
+sudo journalctl -u gopms.service
+sudo journalctl -u gopms.service -f
+
+
+https://www.auroria.io/spring-boot-as-systemd-service/
+
+
+
+
+
+######### Set tomcat as Service ####################
+
+sudo useradd --system bigdata_user
+
+sudo touch /etc/systemd/system/tomcat.service
+sudo nano /etc/systemd/system/tomcat.service
+--------------------------------------------------------
+[Unit]
+Description= Tomcat Application
+After=syslog.target
+
+[Service]
+User=bigdata_user
+ExecStart=/usr/local/tomcat/bin/startup.sh
+SuccessExitStatus=143
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+--------------------------------------------------------
+
+sudo systemctl daemon-reload
+sudo systemctl enable tomcat
+sudo systemctl start tomcat

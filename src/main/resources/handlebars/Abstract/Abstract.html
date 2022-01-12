@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Jolly+Lodger' rel='stylesheet' type='text/css'>
+    <style>
+      @font-face {
+      font-family: "Bahij Halvetica";
+      src: url("{{{fontBoldUri}}}");
+      font-weight: bold;
+    }
+  
+    @font-face {
+      font-family: "Bahij Halvetica";
+      src: url("{{{fontLightUri}}}");
+      font-weight: lighter;
+    }
+  
+    @font-face {
+      font-family: "Bahij Halvetica";
+      src: url("{{{fontRomanUri}}}");
+      font-weight: normal;
+    }
+
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, div {
+	    font-family: "Bahij Halvetica";
+    }
+
+    .green-background {
+      font-size: 14px;
+      background: rgba(16, 107, 182, 0.46);
+      border: 1px solid rgba(34, 140, 226, 0.747);
+    }
+
+    
+    div {
+        font-size: 12px;
+    }
+
+    .bold-text {
+        font-weight: bold;
+    }
+
+    table {
+        page-break-inside: auto;
+      }
+      tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+      }
+      thead {
+        display: table-header-group;
+      }
+
+      table {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      td {
+        border: 0.4px solid black;
+        padding: 5px;
+      }
+
+      .profile-image {
+          display:block; 
+          width:100%; 
+          height:auto;
+      }
+ 
+    </style>
+</head>
+<body dir="rtl">
+    <div style="margin: 10px; display: -webkit-box; display: -ms-flexbox; 
+    display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column;">
+    <div style="display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-between;">
+      <div style="margin: 10px; padding: 20px; text-align: center;" >
+        <div style="font-weight: bold;">د افغانستان اسلامي جمهوریت</div>
+        <div style="font-weight: bold; font-size: 10px;">د جمهوري ریاست د چارو ادارې لوی ریاست</div>
+      </div>
+      <div style="margin: 5px; text-align: center;">
+        <div><img src="{{{logoImageUri}}}" height="90px" width="100px" /></div>
+        <div style="font-weight: bold;">معاونیت منابع و اداره</div>
+        <div style="font-weight: bold; font-size: 10px;">ریاست امور کادری، اصلاحات و بازنگری تشکیلات دولت</div>
+        <div style="font-weight: bold;">خلص سوانح مقامات عالی رتبه دولتی و مقامات دولتی</div>
+      </div>
+      <div style="margin: 10px; text-align: center;" >
+        <div style="font-weight: bold;">دولت جمهوری اسلامی افغانستان</div>
+        <div style="font-weight: bold; font-size: 10px;">ریاست عمومی اداره امور ریاست جمهوری</div>
+      </div>
+    </div>
+    
+    <div style="display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;">
+      <div style="margin-bottom: 10px;">
+        <strong>تاریخ:&nbsp;</strong>{{tarekh}}
+      </div>
+      <div style="margin-bottom: 10px; font-size: 10px;">
+        <strong>کد دفتر سوانح:&nbsp;</strong>({{profile.profileCode}})
+      </div>
+    </div>
+    </div>
+    
+    <div style="margin: 10px;  display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column;">
+      <table>
+        <tbody style="text-align: center;">
+          <tr>
+            <td class="bold-text green-background" colspan="15">شهرت</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold;" colspan="2">اسم و تخلص</td>
+            <td colspan="3">{{profile.firstName}} {{profile.lastName}}</td>
+    
+            <td style="font-weight: bold; width: 10%;" colspan="3">جنسیت</td>
+            <td colspan="4">{{profile.gender}}</td>
+            <td rowspan="5" colspan="5">
+              <img class="profile-image" src="{{{profilePictureUri}}}" />
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold;" colspan="2">ولد/بنت</td>
+            <td colspan="3">{{profile.fatherName}}</td>
+            <td style="font-weight: bold;" colspan="3">دین و مذهب</td>
+            <td colspan="4">{{profile.religion}} - {{profile.sect}}</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold;" colspan="2">ولدیت</td>
+            <td colspan="3">{{profile.grandFatherName}}</td>
+            <td style="font-weight: bold;" colspan="3">ملیت و قومیت</td>
+            <td colspan="4">{{profile.nationality}} - {{profile.ethnic}}</td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: bold;" colspan="2">تاریخ و محل تولد</td>
+            <td colspan="3">{{profile.dob}} - {{profile.birthProvince}}</td>
+            <td style="font-weight: bold;" colspan="3">شمارۀ تماس</td>
+            <td colspan="4">{{profile.phone}}</td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: bold;" colspan="2">گروپ خون</td>
+            <td colspan="3">{{profile.blood}}</td>
+            <td style="font-weight: bold;" colspan="3">آدرس الکترونیکی</td>
+            <td colspan="4">{{profile.email}}</td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: bold;" rowspan="2" colspan="2">سکونت</td>
+            <td style="font-weight: bold;">اصلی</td>
+            <td>{{profile.originalProvince}}</td>
+            <td>{{profile.originalVillage}}</td>
+            <td colspan="3">{{profile.originalDistrict}}</td>
+            <td style="font-weight: bold;" colspan="2" rowspan="2">شماره تذکره</td>
+            <td style="font-weight: bold;">الکترونیکی</td>
+            <td colspan="4">{{profile.enid}}</td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: bold;">فعلی</td>
+            <td >{{profile.currentProvince}}</td>
+            <td>{{profile.currentVillage}}</td>
+            <td colspan="3">{{profile.currentDistrict}}</td>
+            <td style="font-weight: bold;">ورقی</td>
+            <td colspan="4">{{#if profile.tazkiraNumber}} ش ({{profile.tazkiraNumber}}) ج ({{profile.tazkiraTog}}) ص ({{profile.tazkiraPage}}) ث ({{profile.tazkiraRegister}}) {{else}}ندارد{{/if}} </td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold;" rowspan="2" colspan="2">بلدیت به زبانها</td>
+            <td style="font-weight: bold;">ملی</td>
+            <td colspan="2">
+              {{#each profile.nationalLanguages as |item index|}}
+              {{#if @index}},{{/if}} {{item}}
+              {{/each}}
+            </td>
+            <td style="font-weight: bold;" rowspan="2" colspan="3">عضویت در سازمانها</td>
+            <td style="font-weight: bold;">سیاسی</td>
+            <td>{{#if participantInPoliticalOrganizations}}دارد {{else}}ندارد{{/if}}</td>
+            
+            <td style="font-weight: bold;" rowspan="2">خدمات عسکری</td>
+            <td style="font-weight: bold;" colspan="2">مکلفیت</td>
+            <td colspan="2">{{#if militaryMokalafiyat}}دارد {{else}}ندارد{{/if}}</td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: bold;">سایر زبانها</td>
+            <td colspan="2">
+              {{#each languages as |item index|}}
+              {{#if @index}},{{/if}} {{item.nameDr}}
+              {{/each}}
+            </td>
+
+            <td style="font-weight: bold;">اجتماعی</td>
+            <td>{{#if participantInSocialOrganizations}}دارد {{else}}ندارد{{/if}}</td>
+
+
+            <td style="font-weight: bold;" colspan="2">احتیاط</td>
+            <td colspan="2">{{#if militaryIhteyat}}دارد {{else}}ندارد{{/if}}
+            </td>
+          </tr>
+    
+          <tr>
+            <td class="bold-text green-background" colspan="15">سوابق تعلیمی و تحصیلی</td>
+          </tr>
+    
+          
+          <tr>
+            <td style="font-weight: bold;" colspan="3">درجه تحصیل</td>
+            <td style="font-weight: bold;" colspan="2">رشتۀ تحصیل</td>
+            <td style="font-weight: bold;" colspan="3">موسسه تحصیلی</td>
+            <td style="font-weight: bold;" colspan="3">محل تحصیل</td>
+            <td style="font-weight: bold;" colspan="2">سال شمولیت</td>
+            <td style="font-weight: bold;" colspan="2">سال فراغت</td>
+          </tr>
+
+          {{#each education as |item index|}}
+          <tr>
+            <td style="font-weight: bold;" colspan="3">{{item.level.nameDr}}</td>
+            <td colspan="2">{{item.fieldOfStudy}}</td>
+            <td colspan="3">{{item.university}}</td>
+            <td colspan="3">{{item.country.nameDr}}</td>
+            <td colspan="2">{{item.startDateString}}</td>
+            <td colspan="2">{{item.graduationDateString}}</td>
+          </tr>
+          {{/each}}
+
+          <tr>
+            <td class="bold-text green-background" colspan="15">سوابق کاری</td>
+          </tr>
+    
+          <tr>
+            <td style="font-weight: bold;" colspan="3">عنوان بست</td>
+            <td style="font-weight: bold;" colspan="2">بست</td>
+            <td style="font-weight: bold;" colspan="3">محل وظیفه</td>
+            <td style="font-weight: bold;" colspan="3">تاریخ آغاز</td>
+            <td style="font-weight: bold;" colspan="2">تاریخ ختم</td>
+            <td style="font-weight: bold;" colspan="2">دلیل ختم وظیفه</td>
+          </tr>
+    
+          {{#each profileJobs as |item index|}}
+          <tr>
+            <td colspan="3">{{item.positionTitle}}</td>
+            <td colspan="2">{{item.grade.nameDr}}</td>
+            {{#if item.ministry}}
+            <td colspan="3">{{item.ministry.nameDr}}</td>
+            {{else}}
+            <td colspan="3">{{item.authority.nameDr}}</td>
+            {{/if}}
+
+            <td colspan="3">{{item.maktubDateString}}</td>
+
+            {{#if item.endDate}}
+            <td colspan="2">{{item.endDateString}}</td>
+            {{else}}
+            <td colspan="2">برحال</td>
+            {{/if}}
+            <td colspan="2">{{item.breakDetail}}
+            </td>
+          </tr>
+          {{/each}}
+
+          
+          <tr>
+            <td class="bold-text green-background" colspan="15">ترفیعات</td>
+          </tr>
+    
+          <tr class="bold-text">
+            <td colspan="3">رتبه</td>
+            <td>دهم</td>
+            <td>نهم</td>
+            <td>هشتم</td>
+            <td>هفتم</td>
+            <td>ششم</td>
+            <td>پنجم</td>
+            <td>چهارم</td>
+            <td>سوم</td>
+            <td>دوم</td>
+            <td>اول</td>
+            <td>فوق</td>
+            <td>مافوق</td>
+          </tr>
+    
+          <tr>
+            <td class="bold-text" colspan="3">تاریخ</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+    
+          <tr>
+            <td class="bold-text" colspan="2" rowspan="3">قدم</td>
+            <td class="bold-text">سال</td>
+            <td></td>
+            <td>۱</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+    
+          <tr>
+            <td class="bold-text">ماه</td>
+            <td></td>
+            <td>۱</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+    
+          <tr>
+            <td class="bold-text">روز</td>
+            <td></td>
+            <td ></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+    
+          <tr>
+            <td class="bold-text green-background" colspan="15">مکافات</td>
+          </tr>
+    
+          <tr class="bold-text">
+            <td colspan="2">مکافات نقدی</td>
+            <td colspan="2">تحسین نامه</td>
+            <td colspan="3">تقدیر نامه درجه سوم</td>
+            <td colspan="3">تقدیر نامه دوم</td>
+            <td colspan="3">تقدیر نامه درجه اول</td>
+            <td colspan="3">نشانهای و مدال ها</td>
+          </tr>
+    
+          <tr>
+            <td colspan="2">{{#if totalNumberOfCashRewards}} {{totalNumberOfCashRewards}} {{else}}ندارد{{/if}}</td>
+            <td colspan="2">{{#if praiseLetterCount}} {{praiseLetterCount}} {{else}}ندارد{{/if}}</td>
+            <td colspan="3">{{#if total3rdAppreciationDegrees}} {{total3rdAppreciationDegrees}} {{else}}ندارد{{/if}}</td>
+            <td colspan="3">{{#if total2ndAppreciationDegrees}} {{total2ndAppreciationDegrees}} {{else}}ندارد{{/if}}</td>
+            <td colspan="3">{{#if total1stAppreciationDegrees}} {{total1stAppreciationDegrees}} {{else}}ندارد{{/if}}</td>
+            <td colspan="3">{{#if totalMedalCount}} {{totalMedalCount}} {{else}}ندارد{{/if}}</td>
+          </tr>
+    
+          <tr>
+            <td class="bold-text green-background" colspan="15">مجازات</td>
+          </tr>
+    
+          <tr class="bold-text">
+            <td colspan="2">توصیه</td>
+            <td colspan="2">اخطار</td>
+            <td colspan="3">کسر معاش</td>
+            <td colspan="3">تبدیلی</td>
+            <td colspan="5">فسخ قرارداد</td>
+          </tr> 
+    
+          <tr>
+            <td colspan="2">{{#if adviceCount}} {{adviceCount}} {{else}}ندارد{{/if}}</td>
+            <td colspan="2">{{#if warningCount}} {{warningCount}} {{else}}ندارد{{/if}}</td>
+            <td colspan="3">{{#if salaryReductionCount}} {{salaryReductionCount}} {{else}}ندارد{{/if}}</td>
+            <td colspan="3">{{#if conversionCount}} {{conversionCount}} {{else}}ندارد{{/if}}</td>
+            <td colspan="5">{{#if contractTerminationCount}} {{contractTerminationCount}} {{else}}ندارد{{/if}}</td>
+          </tr> 
+    
+          <tr>
+            <td class="bold-text green-background" colspan="15">ملاحظات</td>
+          </tr>
+    
+          <tr>
+            <td colspan="15"><br/><br/><br/></td>
+          </tr>
+    
+        </tbody>
+      </table>
+    </div>
+    
+    <div style="display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; 
+    margin-left: 10px; margin-right: 10px;  border-bottom: 1px solid black;">
+      <div class="bold-text">
+        <div>معلومات فوق به رویت دفتر سوانح ترتیب و صحت است.</div>
+        <div>ترتیب کننده</div>
+        <div>نام و تخلص</div>
+        <div>کارشناس سوانح مقامات عالی رتبه دولتی و مقامات دولتی</div>
+      </div>
+      
+      <div class="bold-text">
+        <br>
+        <div>تایید کننده</div>
+        <div>احمد طارق ستانکزی</div>
+        <div>سرپرست ریاست امور کادری،اصلاحات و بازنگری تشکیلات دولت</div>
+      </div>
+    </div>
+    
+    <div style="margin: 10px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row;
+     -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;">
+      <div>آدرس: ریاست عمومی اداره امور ریاست ج.ا.ا قصر مرمرین، کابل - افغانستان</div>
+      <div>آدرس الکترونیکی: Gcbio@aop.gov.af</div>
+      <div>تیلیفون: ۰۲۰۲۱۴۳۴۹۰ / ۰۲۰۲۱۴۳۴۹۱</div>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+INSERT INTO public.ministry(
+	id, active, created_by, deleted, name_dr, name_en, name_ps)
+	VALUES 
+	(1, 't', 'admin', 'f', 'وزارت عدلیه', 'Ministry of Justice','د عدلیې وزارت'),
+	(2, 't', 'admin', 'f', 'وزارت مالیه', 'Ministry of Finance','د مالیی وزارت '),
+	(3, 't', 'admin', 'f', 'وزارت زراعت، آبیاری و مالداری ', '  MINISTRY OF AGRICULTURE, IRRIGATION, AND LIVESTOCK (MAIL)',' دکرنې، اوبولګولو او مالدارۍ وزارت '),
+	(4, 't', 'admin', 'f', 'وزارت صنعت و تجارت', 'Ministry of Industry and Commerce','د صنعت او سوداگری وزارت'),
+	(5, 't', 'admin', 'f', 'وزارت مخابرات و تکنالوژی معلوماتی', 'Ministry of Communications and Information Technology','د مخابراتو او معلوماتي ټکنالوجۍ وزارت'),
+	(6, 't', 'admin', 'f', 'وزارت دفاع ملی', 'Ministry of Defense ','د ملي دفاع وزارت'),
+	(7, 't', 'admin', 'f', 'وزارت معارف', 'Ministry of Education','د پوهنې وزارت'),
+	(8, 't', 'admin', 'f', 'وزارت فواید عامه', 'Ministry of Public Works','د ټولګټو وزارت'),
+	(9, 't', 'admin', 'f', 'وزارت امور خارجه', 'Ministry of Foreign Affairs','د بهرنیو چارو وزارت'),
+	(10, 't', 'admin', 'f', 'وزارت صحت عامه', 'Ministry of Public Health','د عامې روغتیا وزارت'),
+	(11, 't', 'admin', 'f', 'وزارت تحصیلات عالی', 'Ministry of Higher Education','د لوړو زده کړو وزارت'),
+	(12, 't', 'admin', 'f', 'وزارت اطلاعات و فرهنگ', 'Ministry of Information and Culture','د اطلاعاتو او فرهنګ وزارت'),
+	(13, 't', 'admin', 'f', 'وزارت کار و امور اجتماعی', 'Ministry of Labor and Social Affairs','د کار او ټولنیزو چارو وزارت'),
+	(14, 't', 'admin', 'f', 'وزارت معادن و پترولیم', 'Ministry of Mines and Petroleum','د کانونو او  پټرولیم وزارت'),
+	(15, 't', 'admin', 'f', 'وزارت احیاء و انکشاف دهات', 'Ministry of Rural Rehabilitation and Development (MRRD)','د کليو د بيارغونې او پراختيا وزارت'),
+	(16, 't', 'admin', 'f', 'وزارت ترانسپورت', 'Ministry of Transport','د ترانسپورت وزارت'),
+	(17, 't', 'admin', 'f', 'وزارت شهرسازی و اراضی', 'Ministry of Urban Development and Land','د ښار جوړولو او ځمکو وزارت'),
+	(18, 't', 'admin', 'f', 'وزارت امور شهداء و معلولین', 'Ministry of Martyrs and Disabled Affairs','د شهیدانو او معلولینو چارو وزارت'),
+	(19, 't', 'admin', 'f', 'وزارت امور مهاجرین و عودت کنندگان', 'Ministry of Refugees and Repatriations','د کډوالو او راستنېدونکو چارو وزارت'),
+	(20, 't', 'admin', 'f', 'وزارت امور داخله', 'Ministry of Interior Affairs','د کورنیو چارو وزارت'),
+	(21, 't', 'admin', 'f', 'وزارت امور سرحدات و قبایل', 'Ministry of Borders and Tribal Affairs','د سرحدونو او قبایلو چارو وزارت'),
+	(22, 't', 'admin', 'f', 'وزارت اقتصاد', 'Ministry of Economy','د اقتصاد وزارت'),
+	(23, 't', 'admin', 'f', 'وزارت ارشاد، حج و اوقاف', 'Ministry of Hajj and Religious Affairs','د ارشاد، حج او اوقافو وزارت'),
+	(24, 't', 'admin', 'f', 'وزارت امور زنان', 'Ministry of Women Affairs','د ښځو چارو وزارت'),
+	(25, 't', 'admin', 'f', 'دفتر وزیر دولت در امور پارلمانی', 'Ministry for Parliamentary Affairs','په پارلماني چارو کې د دولت وزارت'),
+	(26, 't', 'admin', 'f', 'دفتر وزیر دولت در امور رسیدگی به حوادث ', 'Office of State Minister for Disaster Management','پیښو ته د رسیدو په چارو کې د دولت وزارت'),
+	(27, 't', 'admin', 'f', 'دفتر وزیر دولت در امور صلح', 'State Ministry for Peace','د سولې په چارو کې د دولت وزارت');
+    
